@@ -1,12 +1,12 @@
-package com.psl.training.dao;
+package com.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.psl.training.ordersystem.Customer;
-import com.psl.training.util.ConnectionManager;
+import com.ordersystem.Customer;
+import com.util.ConnectionManager;
 
 public class CustomerDao {
 
