@@ -1,0 +1,36 @@
+CREATE DATABASE order_management_db;
+use order_management_db;
+CREATE TABLE Customer (
+	custId INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
+	custName VARCHAR (30) ,
+	homePhone VARCHAR(15) , 
+	cellPhone VARCHAR(15) , 
+	workPhone VARCHAR(15) , 
+	Street VARCHAR(30), 
+	City VARCHAR(30),
+	State VARCHAR (30),
+	ZipCode VARCHAR (6),
+	);
+CREATE TABLE PurchaseOrder (
+	pONumber INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
+	orderDate DATE NOT NULL, 
+	shipDate DATE ,
+	customerId Int(6)unsigned,
+	CONSTRAINT fk_category FOREIGN KEY (customerId) REFERENCES Customer (custId)
+	);
+CREATE TABLE StockItem (
+	itemNumber INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY , 
+	itemDescription VARCHAR(100),
+	itemPrice DOUBLE(5,3)
+	);
+CREATE TABLE OrderItem (
+	numberOfItems int(10),
+	itemNumber int(6)unsigned , 
+	purchaseId int(6) unsigned,
+	CONSTRAINT fk_category1 FOREIGN KEY (itemNumber) REFERENCES StockItem (itemNumber),
+	CONSTRAINT fk_category2 FOREIGN KEY (purchaseId) REFERENCES PurchaseOrder(pONumber)
+	);
+
+select *from Customer;
+SHOW COLUMNS FROM Customer IN order_management_db;
+SHOW COLUMNS FROM PurchaseOrder IN order_management_db;
