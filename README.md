@@ -27,6 +27,9 @@ This project is based on core java concepts which has mysql database and impleme
 This will create 4 table namely Customer,PurchaseOrder,StockItem and OrderItem.For understanding relationship between table refer the tableimg/ER-dig.
 
 
+**How to run:**
+Setup the database and all java files in Eclipse or any platform. Run tester2 java file. 
+
  
 
  
