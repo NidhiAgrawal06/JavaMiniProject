@@ -16,10 +16,10 @@ Develop another class called CustomerTest.  This class should create 3 Customer
 each of the Customer methods.
  */
 
-package com.psl.training.ordersystem;
+package com.ordersystem;
+
 
 public class Customer {
-	
 	private int customerNumber;
 	private String name;
 	private String homePhone;
@@ -29,26 +29,32 @@ public class Customer {
 	private String state;
 	private String city;
 	private String zipcode;
-	private int purchaseOrder;
 	
-	public Customer() {
-		
-	}
-	public Customer(int id , String name,String homePhone,String cellPhone,String workPhone,String street,String state,String city,String zipcode,int purchaseOrder) 
-	{
-		super();
-		this.customerNumber = id;
-		this.name = name;
-		this.homePhone = homePhone;
-		this.cellPhone = cellPhone;
-		this.workPhone = workPhone;
-		this.street = street;
-		this.state = state;
-		this.city = city;
-		this.zipcode = zipcode;
-		this.purchaseOrder = purchaseOrder;
-	}
+	//private List <PurchaseOrder> pO;
 	
+	
+	//getter & Setter
+	public String getHomePhone() {
+		return homePhone;
+	}
+	public String getCellPhone() {
+		return cellPhone;
+	}
+	public String getWorkPhone() {
+		return workPhone;
+	}
+	public String getStreet() {
+		return street;
+	}
+	public String getState() {
+		return state;
+	}
+	public String getCity() {
+		return city;
+	}
+	public String getZipcode() {
+		return zipcode;
+	}
 	public int getCustomerNumber() {
 		return customerNumber;
 	}
@@ -61,82 +67,63 @@ public class Customer {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getHomePhone() {
-		return homePhone;
+//	public List<PurchaseOrder> getpO() {
+//		return pO;
+//	}
+//	public void setpO(List<PurchaseOrder> pO) {
+//		this.pO = pO;
+//	}
+//	
+	
+	public Customer(int id , String name) 
+	{
+		this.customerNumber = id;
+		this.name = name;
 	}
+	public Customer(String name2) {
+		this.name=name2;
+	}
+	@Override
+	public String toString() {
+		return "Customer [customerNumber=" + customerNumber + ", name=" + name + ", homePhone=" + homePhone
+				+ ", cellPhone=" + cellPhone + ", workPhone=" + workPhone + ", street=" + street + ", state=" + state
+				+ ", city=" + city + ", zipcode=" + zipcode + "]";
+	}
+	public Customer() {
+		// TODO Auto-generated constructor stub
+	}
+	void printPhoneNumber()
+	{
+		 System.out.println("--------Phone Details-------");
+		 System.out.println("Home Phone: "+homePhone +"\nCell Phone: "+cellPhone+"\nWork Phone: "+workPhone);
+	}
+	void pringShippingAddress()
+	{
+		System.out.println("--------Shipping Details-------");
+		System.out.println("Street: "+street+",\nCity: "+city+",\nState: "+state+",\nZip Code: "+zipcode);
+	}
+	
 	public void setHomePhone(String homePhone) {
 		this.homePhone = homePhone;
-	}
-	public String getCellPhone() {
-		return cellPhone;
 	}
 	public void setCellPhone(String cellPhone) {
 		this.cellPhone = cellPhone;
 	}
-	public String getWorkPhone() {
-		return workPhone;
-	}
 	public void setWorkPhone(String workPhone) {
 		this.workPhone = workPhone;
-	}
-	public String getStreet() {
-		return street;
 	}
 	public void setStreet(String street) {
 		this.street = street;
 	}
-	
-	public String getState() {
-		return state;
-	}
 	public void setState(String state) {
 		this.state = state;
-	}
-	public String getCity() {
-		return city;
 	}
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public String getZipcode() {
-		return zipcode;
-	}
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
-
-
-	public int getPurchaseOrder() {
-		return purchaseOrder;
-	}
-
-	public void setPurchaseOrder(int purchaseOrder) {
-		this.purchaseOrder = purchaseOrder;
-	}
-//
-//	void printPhoneNumber()
-//	{
-//		 System.out.println("--------Phone Details-------");
-//		 System.out.println("Home Phone: "+homePhone +"\nCell Phone: "+cellPhone+"\nWork Phone: "+workPhone);
-//	}
-//	void pringShippingAddress()
-//	{
-//		System.out.println("--------Shipping Details-------");
-//		System.out.println("Street: "+street+",\nCity: "+city+",\nState: "+state+",\nZip Code: "+zipcode);
-//	}
-//	void setPrintingAddress(String street,String city,String state ,String zipcode)
-//	{
-//		this.street = street;
-//		this.city = city;
-//		this.state = state;
-//		this.zipcode = zipcode;
-//	}
-//	void setPhoneNumber(String homePhone,String cellPhone ,String workPhone)
-//	{
-//		this.homePhone = homePhone;
-//		this.workPhone = workPhone;
-//		this.cellPhone = cellPhone;
-//	}
 	void print()
 	{
 		System.out.println("Customer Details-----------------------------------------");
@@ -148,10 +135,6 @@ public class Customer {
 		System.out.println("Street: "+street+",\nCity: "+city+",\nState: "+state+",\nZip Code: "+zipcode);
 
 	}
+	
 
-	public String toString() {
-		return "Customer Id :" +customerNumber + ", CustomerName :" +name
-				+ ", Home Phone :" +homePhone + ", Cell Phone :" + cellPhone + ", Work Phone :"
-				+ workPhone + ", Street :" +street +", City :" +city +", State :" +state +", Zip Code :" + zipcode +", Purchase Order :" +purchaseOrder ;
-	}
 }

@@ -1,4 +1,4 @@
-package com.psl.training.dao;
+package com.dao;
 
 import java.sql.Date;
 

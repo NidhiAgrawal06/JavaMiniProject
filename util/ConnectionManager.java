@@ -1,4 +1,4 @@
-package com.psl.training.util;
+package com.util;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -31,10 +31,10 @@ public class ConnectionManager {
 		}
 		 
 		 // we are passign default values will be used in case property is missing
-		 url=props.getProperty("mysql.url", "jdbc:mysql://localhost/order_management_db");
+		 url=props.getProperty("mysql.url", "jdbc:mysql://localhost/test");
 		 username=props.getProperty("mysql.username","root");
-		 password=props.getProperty("mysql.password","mysql");
-		 driver=props.getProperty("mysql.driver","com.mysql.cj.jdbc.Driver");
+		 password=props.getProperty("mysql.password","Passw0rd");
+		 driver=props.getProperty("mysql.driver","com.mysql.jdbc.Driver");
 	 }
 	/** 
 	  making constructor private to restrict object creation and impl Singleton 
