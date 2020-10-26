@@ -1,4 +1,5 @@
 # JavaMiniProject
+**Order Management System**
 This project is based on core java concepts which has mysql database and implemented through the 4 layers dao,util,service,test.There is no framework involved in project and implemention done with on command line of eclipse there is no front end specially developed
 
 **Functionality involved:**
